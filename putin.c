@@ -12,17 +12,24 @@ int main()
     }
     scanf("%d",&n);
     int ret = 0;
-    for(int i = 0;i < 9;i++)
+    for(int i = 0;i < 10;i++)
     {
-        if(n >= arr[i] && n <= arr[i + 1] )
+        //确定区间进行插入
+        if(n <= arr[i] )
         {
             ret = i;
         }
     }
+    //放要后移的值
+    int tem = 0;
+    //用n存放后边要进行覆盖的值,tem记录被覆盖的值
     for(int i = ret;i < 11;i++)
     {
-
+    
+        tem = arr[i];
+        arr[i] = n;
+        n = tem;
     }
-
+    return 0;
     
 }
